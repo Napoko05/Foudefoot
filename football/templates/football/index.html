@@ -1,0 +1,18 @@
+
+{% extends "football/base.html" %}
+{% block title %}Accueil - FoudeFoot{% endblock %}
+{% block content %}
+    <h1>Bienvenue sur FoudeFoot !</h1>
+    <!-- Ton contenu ici -->
+     <!DOCTYPE html>
+<html>
+<head>
+    <title>FoudeFoot - Accueil</title>
+</head>
+<body>
+    <h1>Mr savadogo vous souhaite le bienvenu!</h1>
+    <a href="{% url 'pubs' %}">Voir les pubs</a>
+   <a href="{% url 'abonnement_step1' %}">S'abonner</a>
+</body>
+</html>
+{% endblock %}

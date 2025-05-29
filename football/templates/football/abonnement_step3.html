@@ -1,0 +1,38 @@
+{% extends "football/base.html" %}
+{% block title %}Accueil - FoudeFoot{% endblock %}
+{% block content %}
+    <h1>Bienvenue sur FoudeFoot !</h1>
+    <!-- Ton contenu ici -->
+     <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Abonnement - Étape 3</title>
+</head>
+<body>
+    <h1>Informations personnelles</h1>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required><br><br>
+        <label for="genre">Genre :</label>
+        <select id="genre" name="genre" required>
+            <option value="">--Choisir--</option>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+            <option value="autre">Autre</option>
+        </select><br><br>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <label for="password2">Confirmer le mot de passe :</label>
+        <input type="password" id="password2" name="password2" required><br><br>
+        <button type="submit">S'inscrire</button>
+    </form>
+</body>
+</html>
+{% endblock %}

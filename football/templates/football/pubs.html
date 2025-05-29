@@ -1,0 +1,32 @@
+
+ 
+{% extends "football/base.html" %}
+{% block title %}Accueil - FoudeFoot{% endblock %}
+{% block content %}
+    <h1>Bienvenue a la plateforme FoudeFoot du super jounaliste    {% extends "football/base.html" %}
+    {% block title %}Accueil - FoudeFoot{% endblock %}
+    {% block content %}
+        <h1>Bienvenue à la plateforme FoudeFoot du super journaliste !</h1>
+        <h2>Publicités de FoudeFoot</h2>
+        {% for pub in pubs %}
+            <h3>{{ pub.titre }}</h3>
+            <p>{{ pub.contenu }}</p>
+            <hr>
+        {% endfor %}
+    {% endblock %} !</h1>
+    <!-- Ton contenu ici -->
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Publicités</title>
+    </head>
+   <body>
+    <h1>Publicités de FoudeFoot</h1>
+    {% for pub in pubs %}
+        <h2>{{ pub.titre }}</h2>
+        <p>{{ pub.contenu }}</p>
+        <hr>
+    {% endfor %}
+</body>
+</html>
+{% endblock %}

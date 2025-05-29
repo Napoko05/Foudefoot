@@ -1,0 +1,16 @@
+{% extends "football/base.html" %}
+{% block title %}Accueil - FoudeFoot{% endblock %}
+{% block content %}
+    <h1>Bienvenue sur FoudeFoot !</h1>
+    <!-- Ton contenu ici -->
+    <h1>Code envoyé à {{ gmail }}</h1>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="code">Code de validation :</label>
+        <input type="text" id="code" name="code" required pattern="\d{6}"><br><br>
+        <button type="submit">Valider</button>
+    </form>
+{% endblock %}

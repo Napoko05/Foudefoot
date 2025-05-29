@@ -1,0 +1,27 @@
+{% extends "football/base.html" %}
+{% block title %}Accueil - FoudeFoot{% endblock %}
+{% block content %}
+    <h1>Bienvenue sur FoudeFoot !</h1>
+    <!-- Ton contenu ici -->
+     <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Abonnement - Étape 4</title>
+</head>
+<body>
+    <h1>Choix du mode de paiement</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="paiement">Mode de paiement :</label>
+        <select id="paiement" name="paiement" required>
+            <option value="">--Choisir--</option>
+            <option value="orange">Orange Money</option>
+            <option value="moov">Moov Money</option>
+            <option value="wave">Wave</option>
+        </select><br><br>
+        <button type="submit">Finaliser l'abonnement</button>
+    </form>
+</body>
+</html>
+{% endblock %}
