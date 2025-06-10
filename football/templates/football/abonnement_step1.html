@@ -1,14 +1,14 @@
 {% extends "football/base.html" %}
 {% block title %}Abonnement - Étape 1{% endblock %}
 {% block content %}
-    <h1>Abonnement - Étape 1 : Création du compte</h1>
+    <h1>Inscription Etape 1  : Création du compte</h1>
     <form method="post">
         {% csrf_token %}
         <label for="username">Nom d'utilisateur :</label>
         <input type="text" id="username" name="username" required><br><br>
         <label for="gmail">Adresse Gmail :</label>
         <input type="email" id="gmail" name="gmail" pattern=".+@gmail\.com" required><br><br>
-        <button type="submit">Recevoir le code</button>
+        <button type="submit">mettez le code de verification</button>
     </form>
 
 {% endblock %}

@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
+from django.contrib.admin.views.decorators import staff_member_required  # <-- Ajout du décorateur
 
 def index(request):
     return render(request, 'football/index.html')
@@ -51,6 +52,7 @@ def abonnement_step1(request):
         "username": username,
         "error": error
     })
+
 def abonnement_step2(request):
     data = request.session.get('abonnement')
     if not data:
@@ -104,10 +106,12 @@ def abonnement_step4(request):
         return render(request, "football/abonnement_success.html")
     return render(request, "football/abonnement_step4.html")
 
+@staff_member_required
 def liste_utilisateurs(request):
     utilisateurs = Utilisateur.objects.all()
     return render(request, 'football/utilisateurs.html', {'utilisateurs': utilisateurs})
 
+@staff_member_required
 def envoyer_pub(request):
     abonnes = Utilisateur.objects.filter(est_abonne=True)
     pub = Pub.objects.latest('date_pub')

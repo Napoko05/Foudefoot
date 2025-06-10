@@ -1,0 +1,260 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f4f6fa;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background: #1a3d7c;
+    padding: 0.5em 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1.5em;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+h1, h2, h3 {
+    color: #1a3d7c;
+    margin-top: 1em;
+}
+
+form {
+    background: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 2em auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+label {
+    display: block;
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 0.7em;
+    margin-top: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background: #1a3d7c;
+    color: #fff;
+    border: none;
+    margin-top: 1.5em;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #ffd700;
+    color: #1a3d7c;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 2em 0;
+}
+
+.error {
+    color: #c00;
+    font-weight: bold;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.main-menu {
+    max-width: 900px;
+    margin: 3em auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 2em 1em;
+}
+
+.menu-row, .sub-menu-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+.menu-item, .sub-menu-item {
+    flex: 1 1 120px;
+    margin: 0.5em;
+    padding: 1.2em 0.5em;
+    background: #1a3d7c;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.menu-item:hover, .sub-menu-item:hover {
+    background: #ffd700;
+    color: #1a3d7c;
+}
+
+.menu-separator {
+    border: none;
+    border-top: 2px solid #1a3d7c;
+    margin: 2em 0 1em 0;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+}
+
+nav ul li.logo {
+    margin-right: 2em;
+}
+
+nav ul li.logo img {
+    vertical-align: middle;
+    height: 40px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    z-index: 1;
+    border-radius: 0 0 8px 8px;
+    padding: 0;
+    left: 0;
+}
+
+.dropdown-content a {
+    color: #1a3d7c;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    transition: background 0.2s;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #ffd700;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+.dropdown-sub {
+    position: relative;
+}
+.dropbtn-sub {
+    display: block;
+    width: 100%;
+    color: #1a3d7c;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: normal;
+    cursor: pointer;
+    text-decoration: none;
+}
+.dropdown-content-sub {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 220px;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    border-radius: 0 8px 8px 8px;
+    z-index: 2;
+}
+.dropdown-content-sub a {
+    color: #1a3d7c;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    transition: background 0.2s;
+}
+.dropdown-content-sub a:last-child {
+    border-bottom: none;
+}
+.dropdown-content-sub a:hover {
+    background-color: #f1f1f1;
+    color: #ffd700;
+}
+
+nav {
+    position: relative;
+    z-index: 10;
+}
+.accueil {
+    position: relative;
+    z-index: 1;
+}
+
+.hamburger button {
+    font-size: 2.5em !important; /* Force la taille */
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0 0.5em;
+    line-height: 1;
+    height: 1.2em;
+    width: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

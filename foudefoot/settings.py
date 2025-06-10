@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'football',
 
 ]
+STATIC_URL = '/static/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

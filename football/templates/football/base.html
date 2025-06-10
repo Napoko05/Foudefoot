@@ -3,19 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}FoudeFoot{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'football/style.css' %}">
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('mobile-menu');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="{% url 'index' %}">Accueil</a></li>
-            <li><a href="{% url 'pubs' %}">Pubs</a></li>
+         <ul>
+            <li class="logo">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'football/logo.png' %}" alt="Logo FoudeFoot" style="height:40px;">
+                </a>
+            </li>
+            <li class="hamburger">
+                <button onclick="toggleMenu()">☰</button>
+            </li>
+            <li><a href="#sport-burkinabe">Sport Burkinabè</a></li>
+            <li><a href="#">Sport Africain</a></li>
+            <li><a href="#">Sport International</a></li>
             <li><a href="{% url 'abonnement_step1' %}">S'abonner</a></li>
-            <li><a href="{% url 'liste_utilisateurs' %}">Utilisateurs</a></li>
-            <li><a href="{% url 'envoyer_pub' %}">Envoyer une pub</a></li>
-            <li><a href="{% url 'admin:index' %}">Admin</a></li>
+            <li><a href="#">Chat</a></li>
         </ul>
+        <div id="mobile-menu" class="dropdown-content" style="display: none;">
+            <a href="{% url 'index' %}">Accueil</a>
+            <a href="{% url 'abonnement_step1' %}">S'abonner</a>
+            <a href="{% url 'admin:index' %}">Admin</a>
+            <a href="#">À propos</a>
+            <a href="#">Contact</a>
+            <a href="#">Qui sommes-nous</a>
+        </div>
     </nav>
+
     <hr>
+
     {% block content %}{% endblock %}
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Affichage du menu Sport Burkinabè
+        var burkinabeLink = document.querySelector('a[href="#sport-burkinabe"]');
+        if (burkinabeLink) {
+            burkinabeLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                var menu = document.getElementById('burkinabe-menu');
+                if (menu) menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'block' : 'none';
+            });
+        }
+
+        // Contrôle du sous-menu Football homme
+        var hommeMenu = document.getElementById('homme-menu');
+        var hommeSousmenu = document.getElementById('homme-sousmenu');
+        if (hommeMenu && hommeSousmenu) {
+            hommeMenu.addEventListener('click', function(e) {
+                e.stopPropagation();
+                hommeSousmenu.style.display = (hommeSousmenu.style.display === 'none' || hommeSousmenu.style.display === '') ? 'block' : 'none';
+            });
+            // Cacher le sous-menu si on clique ailleurs
+            document.addEventListener('click', function(e) {
+                if (!hommeMenu.contains(e.target)) {
+                    hommeSousmenu.style.display = 'none';
+                }
+            });
+        }
+    });
+    </script>
 </body>
 </html>

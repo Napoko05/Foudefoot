@@ -1,18 +1,37 @@
-
 {% extends "football/base.html" %}
+{% load static %}
 {% block title %}Accueil - FoudeFoot{% endblock %}
 {% block content %}
-    <h1>Bienvenue sur FoudeFoot !</h1>
-    <!-- Ton contenu ici -->
-     <!DOCTYPE html>
-<html>
-<head>
-    <title>FoudeFoot - Accueil</title>
-</head>
-<body>
-    <h1>Mr savadogo vous souhaite le bienvenu!</h1>
-    <a href="{% url 'pubs' %}">Voir les pubs</a>
-   <a href="{% url 'abonnement_step1' %}">S'abonner</a>
-</body>
-</html>
+
+    <div class="accueil"
+         style="background: url('{% static "football/caf.jpg" %}') no-repeat center center; background-size: cover; min-height: 600px; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2em; color: #fff; position: relative; z-index: 1;">
+        <h1>Bienvenue sur FoudeFoot !</h1>
+        <p>
+           
+        </p>
+        <div id="burkinabe-menu" style="display:none; margin-top:2em;">
+            <h2 style="color:#fff;">Sport Burkinabè</h2>
+            <ul style="list-style:none; padding:0; display:flex; gap:2em;">
+                <li style="background:#1a3d7c; color:#fff; padding:1em 2em; border-radius:8px; cursor:pointer;">
+                    Football féminin
+                </li>
+                <li id="homme-menu" style="background:#1a3d7c; color:#fff; padding:1em 2em; border-radius:8px; cursor:pointer; position:relative;">
+                    Football homme
+                    <ul id="homme-sousmenu" style="display:none; list-style:none; padding:0.5em 0 0 0; margin:0; position:absolute; left:0; top:100%; background:#1a3d7c; border-radius:8px; min-width:220px;">
+                        <li style="padding:0.5em 1em; color:#fff;">AS Douane</li>
+                        <li style="padding:0.5em 1em; color:#fff;">Mageste FC</li>
+                        <li style="padding:0.5em 1em; color:#fff;">Sonabel</li>
+                        <li style="padding:0.5em 1em; color:#fff;">Sporting Cascades</li>
+                        <li style="padding:0.5em 1em; color:#fff;">Salitas</li>
+                        <li style="padding:0.5em 1em; color:#fff;">Etoile Filante Ouagadougou</li>
+                        <li style="padding:0.5em 1em; color:#fff;">Rahimo</li>
+                        <li style="padding:0.5em 1em; color:#fff;">ASEC-K</li>
+                        <li style="padding:0.5em 1em; color:#fff;">Vitesse FC</li>
+                        <li style="padding:0.5em 1em; color:#fff;">AS Faso/Yennega</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+      
+    </div>
 {% endblock %}
